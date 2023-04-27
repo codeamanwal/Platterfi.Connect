@@ -50,8 +50,10 @@
     
 </head>
 
+
 <body class="body">
-    
+
+        
 
         <nav class="nav"><img class="logo w-inline-block" src = "media/logo.png" loading="lazy" alt="Platter"/></a>
 
@@ -89,226 +91,71 @@
     </header>
     <div>
         <br><br><br>
-   
-    <div class="event-container">
+        <div class="event-container"></div>
 
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-                <img src= "https://web3.career/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaDJnIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--b610473906758d2e9c081472cf61390620b1d353/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmxwYVdrPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--ad7667d8ae43bcd8cd94d69c345a74f8f57c92b7/10-19%20gammaswap%20logo.png">
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=ADN3cDN">Senior Solidity Engineer</a></h3>
-  
-            <div class="event-description">
-              GammaSwap Labs<br>
-              Javascript | Dev | Full-Stack | Node | React
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Remote
-            </div>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <img src= "https://sh.web3.career/assets/img/customer_logo/kodex.jpg">
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=gjN3IzM">Front End Developer</a></h3>
-  
-            <div class="event-description">
-              Kodex<br>
-              Dev | FrontEnd | Full Time | GraphQl | React
-              </div>
-  
-            <div class="event-timing">
-              <img src="media/loc.png" alt="" />Remote
-            </div>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <img src = "https://sh.web3.career/assets/img/customer_logo/kodex.jpg">
+        <script type="text/javascript">
+          fetch("https://script.googleusercontent.com/a/macros/platter.fi/echo?user_content_key=ZVVNtNGv4u7l_kqUhFKBmn8mYVLSb2qKwfretUo_w9g3HeiPtKrXVO-XGN3bS1f3CMzYBVRFwPFPROyBvSrQI8jQ30Awyf2Om5_BxDlH2jW0nuo2oDemN9CCS2h10ox_nRPgeZU6HP_vPtkncgMnXc4n_IagqLr0lxvKTlQfBTbpLchX9MeInggEH0zPmtMDqJBVfaAN2U1JYQpGaHV6-NP2zZPBfPFVaVV6r7Ab-WxfoDYxpmYQIxpiJU3n6DUTXMuqa_jo9BU&lib=MUpVzLPVOuTVNG6rkv8KqIkKFVs3fzY2C")
+          .then(function(response){
+            return response.json();
+          })
+          .then(function(data){
+            // console.log(data);
             
-            </div>
-          </div>
+              // var event = document.createElement('div');
+              let placeholder = document.querySelector(".event-container");
+              let out = "";
+              for(let datas of data){
+		          out += 
+                `<div class="event">
+                 <div class="event-left">
+                 <div class="event-date">
+                 <img src= "${datas.img}" onerror="this.onerror=null;this.src='https://cdn3d.iconscout.com/3d/premium/thumb/web-3-5796855-4863023.png';" alt="A beautiful mountain landscape">  
+                </div>
+                </div>
   
           <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=cjN3IzM">Backend Engineer</a></h3>
+            <h3 class="event-title"><a href = "${datas.applylink}">${datas.role} </a></h3>
   
             <div class="event-description">
-              Kodex <br>
-              Backend | Dev | DataEntry | Full Time | GraphQl 
-              </div>
+              ${datas.description1}<br>
+              ${datas.description2}
+            </div>
   
             <div class="event-timing">
-              <img src="media/loc.png" alt="" /> Remote
+                <img src="media/loc.png" alt="" />${datas.location}
             </div>
           </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">S</div><br>
+        </div>`;
+      }
               
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=UTO1gDN">Senior Ful Stack Developer</a></h3>
-  
-            <div class="event-description">
-            Clutchy<br>
-            Javascript | Dev | Full Stack | Node | React
-              </div>
-  
-            <div class="event-timing">
-              <img src="media/loc.png" alt="" /> Remote
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">L</div><br>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=gjM1gDN">Lead FrontEnd Engineer</a></h3>
-  
-            <div class="event-description">
-              Relative Finance<br>
-              Dev | Front End | Lead | CSS |Javascript
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Remote
-            </div>
-          </div>
-        </div>
+        placeholder.innerHTML = out;
+            
+          })
 
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <img src = "https://web3.career/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBdktpIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--572510d3a7970ecd761d5f20f4b910620f76e951/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJYW5CbkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmxwYVdrPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--f7b4b3aa84dd2154b74c8f5bdea3f2ad06b6e999/t7XpoCnT_400x400.jpg">
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=YzN5cDN">Smart Contract Engineer</a></h3>
-  
-            <div class="event-description">
-              Starboard Networks Pte. Ltd.<br>
-              Dev | Ethereum | Agila | Angular | Blockchain
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Remote
-            </div>
-          </div>
-        </div>
+          .catch(function(err){
+            console.log(err);
+          })
+        </script>
 
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">S</div><br>
-              
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=UTO3QDN">Senior Solidity Software Engineer</a></h3>
-  
-            <div class="event-description">
-             Tokemak
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="">Remote
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">B</div><br>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=YzMxkDN">Blockchain Engineer</a></h3>
-  
-            <div class="event-description">
-              Hex Trust<br>
-              Dev | Blockchain | Crypto | Docker | Java
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Malaysia
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-             <img src= "https://web3.career/rails/active_storage/representations/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBayt0IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--dfacf3642cbe870fd5d284d9959dc05f78fd821c/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaDdCem9MWm05eWJXRjBTU0lJY0c1bkJqb0dSVlE2RW5KbGMybDZaVjkwYjE5bWFYUmJCMmxwYVdrPSIsImV4cCI6bnVsbCwicHVyIjoidmFyaWF0aW9uIn19--ad7667d8ae43bcd8cd94d69c345a74f8f57c92b7/A6020351-F2E5-4901-B134-3F2C94A2FB4B.png">
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=YjMwkDN">Web 3 Marketing Lead</a></h3>
-  
-            <div class="event-description">
-             Polemix<br>
-             Marketing Lead | Non-Tech | Brand Marketing
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" /> Remote
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">S</div><br>
-              
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3.career/i/=gTO5gDN">Solidity Software Engineer</a></h3>
-  
-            <div class="event-description">
-              Remote92<br>
-              Dev | Ethereum | NextJa | Noda | React
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Los Angeles,US
-            </div>
-          </div>
-        </div>
-      </div>
+         <!-- <table>
+           <thead>
+             <tr>
+               <th>Image</th>
+               <th>Product name</th>
+               <th>Price</th>
+               <th>inventory</th>
+               <th>Product  code</th>
+             </tr>
+           </thead>
+           <tbody id="data-output">
+           </tbody>
+         </table>  -->
+      
+
+        
     </div>
 
-   <!-- Footer -->
+  <!--Footer--> 
    <footer>
     <div class="about">
       <h1><span class="logo-text">Web3 </span> <span>Opportunities</span></h1>
@@ -344,6 +191,11 @@
         </a>
        
   </footer>
+  
+
+
+  
+
 </body>
 
 </html>
