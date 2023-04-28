@@ -88,272 +88,54 @@
     <div>
         <br><br><br>
     <div class="event-container">
-        <h3 class="year">MAY</h3>
+        
 
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">8</div><br>
-              <div class="month">May</div>
-            </div>
-          </div>
+        
+        <script type="text/javascript">
+          fetch("https://script.googleusercontent.com/a/macros/platter.fi/echo?user_content_key=Gm1Lgu3iD5YP_r3uR_0lMDL3PLi1-9dspn8wqxLIxVGdm4080MKZKlmFDcUnlyQ7fCPOCRj-8SkBFhgE-TpEUN0kzCFCm4Y1m5_BxDlH2jW0nuo2oDemN9CCS2h10ox_nRPgeZU6HP_vPtkncgMnXc4n_IagqLr0Nb5MOJqWfQ5Gxjo1a-AjLK8-5eiXoUsi-M1UstVfyiSB0mYav6yU4ZWTtazwf-zROt9eBAFTVEEBOPpspYuJBC38HigqoqScXMuqa_jo9BU&lib=MUpVzLPVOuTVNG6rkv8KqIkKFVs3fzY2C")
+          .then(function(response){
+            return response.json();
+          })
+          .then(function(data){
+            // console.log(data);
+              let placeholder = document.querySelector(".event-container");
+              
+              let out = "";
+              // out += `<h3 class="year">MAY</h3>`;
+              for(let datas of data){
+		          out += 
+                `<div class="event">
+                 <div class="event-left">
+                 <div class="event-date">
+                  <div class="date">${datas.date}</div><br>
+                  <div class="month">${datas.month}</div>
+                </div>
+                </div>
   
           <div class="event-right">
-            <h3 class="event-title"><a href = "https://blockchaineconomy.istanbul/en">Blockchain Economy Istanbul Summit 2023</a></h3>
+            <h3 class="event-title"><a href = "${datas.eventlink}">${datas.eventname} </a></h3>
   
             <div class="event-description">
-              Eurasia's Largest Blockchain Event. A 4 day meeting place for the
-              world's top crypto companies
-              and blockchain entrepreneurs.
+              ${datas.description}
             </div>
   
             <div class="event-timing">
-                <img src="media/loc.png" alt="" />Istanbul
+                <img src="media/loc.png" alt="" />${datas.location}
             </div>
           </div>
-        </div>
-
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">9</div><br>
-              <div class="month">May</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://dgh.events/event/security-token-summit">Security Token Summit</a></h3>
-  
-            <div class="event-description">
-              2 day event.Institutional Investments, Distribution and Tokenization of Real-World Assets
-              </div>
-  
-            <div class="event-timing">
-              <img src="media/loc.png" alt="" />New York,USA
-            </div>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">18</div><br>
-              <div class="month">May</div>
+        </div>`;
+      }
+              
+        placeholder.innerHTML = out;
             
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://b.tc/conference/bitcoin2023#about">Bitcoin Miami</a></h3>
-  
-            <div class="event-description">
-              An idea whose time has come cannot be stopped! A 4 day event .Join your fellow Bitcoiners in Miami Beach for the biggest annual celebration of Bitcoin in the world. Don't miss out!
-              </div>
-  
-            <div class="event-timing">
-              <img src="media/loc.png" alt="" /> Miami,FL,USA
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">19</div><br>
-              <div class="month">May</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "http://bit.ly/3l0HFqf">The Web3 Conference</a></h3>
-  
-            <div class="event-description">
-              The best Web3 conference for those creating & building the new Internet.
-              To learn, network, build and exchange experiences.
-              </div>
-  
-            <div class="event-timing">
-              <img src="media/loc.png" alt="" /> Amsterdam
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">24</div><br>
-              <div class="month">May</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "http://bit.ly/3lubrna">NBX Warsaw Summit</a></h3>
-  
-            <div class="event-description">
-              A 2 day annual conference and exhibition focused on blockchain technology and its applications in various industries
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Warsaw
-            </div>
-          </div>
-        </div>
+          })
 
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">28</div><br>
-              <div class="month">May</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://events.finoverse.com/radical-finance">Radical Finance 2023 Asia</a></h3>
-  
-            <div class="event-description">
-              A 4 day event to push beyond the hype and unlock the potential of Web3 in Finance.
+          .catch(function(err){
+            console.log(err);
+          })
+        </script>
 
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Hong Kong
-            </div>
-          </div>
-        </div>
-
-  
-        <h3 class="year">JUNE</h3>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">1</div><br>
-              <div class="month">June</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://www.cryptovalleyconference.com/">Crypto Valley Conference</a></h3>
-  
-            <div class="event-description">
-              The 5th edition of the Crypto Valley Conference is coming up with two days of in-depth discussions on the current state and future of blockchain technology.
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="">Switzerland
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">6</div><br>
-              <div class="month">June</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://web3creatorsummit.wishu.io/">WEB3 CREATOR SUMMIT</a></h3>
-  
-            <div class="event-description">
-              Summit has been supported by the most innovative brands and projects in the Web3 ecosystem.
-
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Virtual
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">7</div><br>
-              <div class="month">June</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://www.nonfungibleconference.com/">Non-Fungible Conference</a></h3>
-  
-            <div class="event-description">
-              A 3 day event with mission to reshape events for the Web3 Age and push the boundaries. 
-              It means abandoning the status quo and rewriting event playbooks. 
-              Thinking bigger. Taking risks. Pushing new limits.
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" /> Portugal
-            </div>
-          </div>
-        </div>
-  
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">10</div><br>
-              <div class="month">Jun</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://live.coinbureau.com/">Coin Bureau Live Conference</a></h3>
-  
-            <div class="event-description">
-              Join Coin Bureau for the second addition of Coin Bureau Live, our exclusive conference where we bring together the largest KOLs, projects, decision makers and investors in the space to open discussions on the future of blockchain and web3.
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />London
-            </div>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">12</div><br>
-              <div class="month">Jun</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://metaverse-summit.org/">Metaverse Summit</a></h3>
-  
-            <div class="event-description">
-              Metaverse Summit is set to explore and build the future of Metaverse together. The summit will gather builders, entrepreneurs, investors and experts from 3D, VFXGaming, VR, AR, Web3 and beyond.
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Paris,France
-            </div>
-          </div>
-        </div>
-
-        <div class="event">
-          <div class="event-left">
-            <div class="event-date">
-              <div class="date">28</div><br>
-              <div class="month">Jun</div>
-            </div>
-          </div>
-  
-          <div class="event-right">
-            <h3 class="event-title"><a href = "https://www.ivs.events/crypto">IVS Crypto 2023 Kyoto
-            </a></h3>
-  
-            <div class="event-description">
-             IVS Crypto 2023 KYOTO, is the ultimate 3 day event for Web3 entrepreneurs, investors, developers, IP holders, and curious enthusiasts alike. 
-            </div>
-  
-            <div class="event-timing">
-                <img src="media/loc.png" alt="" />Kyoto,Japan
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div>
 
    <!-- Footer -->
@@ -364,10 +146,10 @@
         Have a question or feedback? We'd love to hear from you! Contact us and our team will get back to you as soon as possible.
       </p>
       <div class="contact">
-        <span>
+        <!-- <span>
           <i class="fas fa-phone"></i>
           + (123) 456 789
-        </span>
+        </span> -->
         <span>
           <i class="fas fa-envelope"></i>
           
